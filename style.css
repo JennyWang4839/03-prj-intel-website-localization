@@ -61,6 +61,8 @@ body {
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
   -webkit-overflow-scrolling: touch; /* smooth iOS scrolling */
 }
 
