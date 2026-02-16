@@ -1,0 +1,211 @@
+/* Style the logo image */
+body {
+  margin: 0;
+
+  padding: 0;
+}
+
+.hero div {
+  text-align: center;
+
+  margin-top: 0px;
+
+  margin-bottom: 0px;
+
+  background-color: #0071C5; /* Intel Blue */
+
+  padding: 40px 20px; /* Top/bottom and left/right */
+
+  outline: none;
+
+  border: none;
+}
+
+.hero img {
+  align-items: center;
+
+  display: block;
+
+  margin: 0 auto;
+
+  width: 20%; 
+}
+
+.hero h1 {
+  font-size: 2.5em;
+
+  font-weight: bold;
+
+  margin: 20px 0;
+
+  color: white;
+}
+
+.hero p {
+  margin-top: 15px;
+
+  font-size: 1.2em;
+
+  color: white;
+}
+
+/* Timeline Section */
+.timeline {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 40px 20px;
+  justify-content: flex-start;
+  /* On large screens, enable horizontal scrolling */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 20px;
+  -webkit-overflow-scrolling: touch; /* smooth iOS scrolling */
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  border: 2px solid #0071C5;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  height: 450px;
+  max-height: 260px; /* base visible area */
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, max-height 0.35s ease;
+  scroll-snap-align: start;
+}
+
+.cards:hover {
+  transform: translateY(-5px);
+  max-height: 900px; /* allow full description to show */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Unify card image size */
+.cards img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.cardInfo h2 {
+  color: #0071C5;
+  font-size: 1.8em;
+  margin: 0 0 10px 0;
+}
+
+.cardInfo h3 {
+  color: #333;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+p.cardInfo {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cards:hover p.cardInfo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+p.direction {
+  text-align: center;
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design - Medium Screens (tablets) */
+@media (max-width: 1024px) {
+  .timeline {
+    /* On medium screens, allow wrapping but keep horizontal scrolling as option */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cards {
+    width: 180px;
+  }
+}
+
+/* Responsive Design - Small Screens (mobile) */
+@media (max-width: 768px) {
+  .timeline {
+    scroll-snap-type: x mandatory;
+  }
+
+  .cards {
+    display: flex !important;
+    flex-direction: column;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .cards * {
+    position: static !important;
+  }
+
+  .cards img {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  .cards p.cardInfo {
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+    margin-top: 12px;
+  }
+}
+
+/* Responsive Design - Extra Small Screens */
+@media (max-width: 480px) {
+  .timeline {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .cards {
+    display: flex !important;
+    flex-direction: column;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .cards * {
+    position: static !important;
+  }
+
+  .cards img {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  .cards p.cardInfo {
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+    margin-top: 12px;
+  }
+}
