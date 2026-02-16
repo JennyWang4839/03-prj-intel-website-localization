@@ -135,6 +135,65 @@ p.direction {
   margin-bottom: 20px;
 }
 
+/* Section Background */
+.three-column-section {
+  background-color: #f8f9fa;
+}
+
+/* Column Box Styling */
+.column-box {
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid #e9ecef;
+}
+
+/* Hover Effect */
+.column-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon Styling */
+.icon-wrapper {
+  font-size: 40px;
+  color: #0d6efd; /* Bootstrap primary */
+  margin-bottom: 20px;
+}
+
+/* Headings */
+.column-box h2 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Paragraph Styling */
+.column-box p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* Learn More Link Styling */
+.learn-link {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Hover for Link */
+.learn-link:hover {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
 /* Responsive Design - Medium Screens (tablets) */
 @media (max-width: 1024px) {
   .timeline {
