@@ -50,28 +50,30 @@ const html = document.documentElement;
 function updateDirection() {
   const currentLang = html.getAttribute('lang');
 
-  if (!currentLang) return;
+  if (!currentLang) {
+    return;
+  }
 
   const shortLang = currentLang.substring(0, 2).toLowerCase();
 
-    if (rtlLanguages.includes(shortLang)) {
-      html.setAttribute('dir', 'rtl');
-      html.classList.add('rtl-active');
-    } else {
-      html.setAttribute('dir', 'ltr');
-      html.classList.remove('rtl-active');
-    }
+  if (rtlLanguages.includes(shortLang)) {
+    html.setAttribute('dir', 'rtl');
+      
+    html.classList.add('rtl-active');
+  } 
+    
+  else {
+    html.setAttribute('dir', 'ltr');
+      
+    html.classList.remove('rtl-active');
   }
+}
 
-  // Run once when page loads
-  document.addEventListener("DOMContentLoaded", updateDirection);
+document.addEventListener("DOMContentLoaded", updateDirection);
 
-  // Watch for language changes (e.g., Google Translate)
-  const observer = new MutationObserver(updateDirection);
+const observer = new MutationObserver(updateDirection);
 
-  observer.observe(html, {
-    attributes: true,
-    attributeFilter: ['lang']
-  });
-
-})();
+observer.observe(html, {
+  attributes: true,
+  attributeFilter: ['lang']
+});
