@@ -26,8 +26,6 @@ cards.forEach(card => {
     card.style.zIndex = "2";
     
     card.style.transition = "box-shadow 0.3s ease, transform 0.3s ease";
-    
-    console.log("cardHeight:", card.scrollHeight);
   });
 
   card.addEventListener("mouseleave", () => {
