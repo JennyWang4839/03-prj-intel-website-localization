@@ -77,3 +77,17 @@ observer.observe(html, {
   attributes: true,
   attributeFilter: ['lang']
 });
+
+const form = document.getElementById("subscribeForm");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // stop page reload
+
+  const modal = new bootstrap.Modal(
+    document.getElementById("subscribeModal")
+  );
+
+  modal.show();
+
+  form.reset(); // clear form
+});
